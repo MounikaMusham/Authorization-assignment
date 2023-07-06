@@ -1,4 +1,4 @@
-const { string } = require('joi');
+//Schema for storing user data in mongo db
 const mongoose = require('mongoose');
 
 var signUPSchema = mongoose.Schema({
@@ -18,6 +18,7 @@ var signUPSchema = mongoose.Schema({
     email:{
         type:String,
         required:true,
+        unique:true
     },
     password:{
         type:String,
@@ -31,20 +32,5 @@ var signUPSchema = mongoose.Schema({
 
 })
 
-var SignInSchema = mongoose.Schema({
-    email:{
-        type:String,
-        required:true,
-    },
-    password:{
-        type:String,
-        required:true,
-        min:8,
-        max:15
-    }
-
-})
-
 var signUPSchema = mongoose.model("auth",signUPSchema);
-// var signInSchema = mongoose.model("signIn",SignInSchema);
 module.exports = signUPSchema
