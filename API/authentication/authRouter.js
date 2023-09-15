@@ -106,7 +106,7 @@ router.post("/userSignIn", async (req, res) => {
 
 //validating token before getting the details
 
-router.get("/users", validateToken, async (req, res) => {
+router.get("/users", async (req, res) => {
   try {
     //finding all the users from database in the collection authModel
     const users = await authModel.find();

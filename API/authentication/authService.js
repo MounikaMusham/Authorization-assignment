@@ -49,7 +49,7 @@ async function userSignUp(body) {
       lastName: body.lastName,
       email: body.email,
       password: modifiedPassword,
-      profilePhoto: profilePhotoUrl.Location ? profilePhotoUrl.Location : null,
+     // profilePhoto: profilePhotoUrl.Location ? profilePhotoUrl.Location : null,
     });
     // returning user details to API response
     return userDetails;
