@@ -2,9 +2,8 @@ swagger: "2.0"
 info:
  title: Authentication API's
 
-# tags:
-#   - name: 'get users'
-
+tags:  # Define a global tag
+  - name: User Management  # Name of the global tag
 schemes: [http,https]
 #user signUp API
 paths: 
@@ -23,7 +22,8 @@ paths:
     responses:
       '200':
         description: OK
-
+    tags:  
+      - User Management
 
 #user login API
  /app/userSignIn:
@@ -41,7 +41,8 @@ paths:
     responses:
       '200':
         description: OK
-
+    tags: 
+      - User Management
 #Get Users List API 
  /app/users:
   get:
@@ -63,7 +64,8 @@ paths:
          type: string  
        profilePhoto:
          type: string
-
+   tags: 
+     - User Management
 
   # /app/userSignUp:
   #  post:
